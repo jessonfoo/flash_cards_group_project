@@ -1,12 +1,14 @@
-<div id="card_display">
+<div id="card_display">	
+		
 
-		<%= @deck.current_card%>
+
+	
 
 
 </div>
 
 <div id ="userInput">
-<form action="" method="post">
+<form action="/<%=@deck.user_id%>/<%=@deck.id %>" method="post">
 	<input type="text" name="answer">
 	<input type="submit" value="submit">
 </form>
