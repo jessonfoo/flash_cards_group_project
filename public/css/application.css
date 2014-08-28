@@ -1,9 +1,19 @@
+body {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("../images/background green.jpg");
+}
 
+.header {
+  text-align: center;
+}
 
 aside.left {
   float: left;
 }
 
 aside.right {
+  text-align: left;
   float: right;
 }
