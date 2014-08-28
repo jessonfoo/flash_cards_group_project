@@ -1,7 +1,27 @@
-<div>
-  <ul>
-    <%Deck.all.each do |deck|%>
-    <a href="/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
-    <%end%>
-  </ul>
-</div>
+<header>
+  <div class = "header">
+    <h1>Welcome <%=params[:username]%></h1>
+    <button type="button">Sign Out</button>
+  </div>
+</header>
+
+<body>
+  <aside class="right">
+    <div class = "deck_list">
+      <h2>Available Decks</h2>
+      <ul>
+        <%Deck.all.each do |deck|%>
+          <a href="/USERID/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
+        <%end%>
+      </ul>
+    </div>
+  </aside>
+
+  <aside class = "left">
+    <img src="http://shechive.files.wordpress.com/2011/08/kitty-cat-18.jpg" alt="Profile picture">
+  </aside>
+</body>
+
+<footer>
+
+</footer>

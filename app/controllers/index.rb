@@ -1,4 +1,5 @@
 
-get '/:user' do
-
+get '/:username' do
+  erb :index
 end
+
