@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration
       t.string :term
       t.string :definition
       t.belongs_to :deck
+      t.timestamps
     end
   end
 end

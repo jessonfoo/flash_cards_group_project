@@ -1,6 +1,30 @@
 <h1>Welcome to Park Humper Flash Cards</h1>
+<% if @signed_in %>
+  <p>Signed in as <%="#{@user.username}"%></p>
+  <form action="/signout" method="post">
+    <input type="submit" value="sign out">
+  </form>
 
-<form action="/user" method='post'>
-  <input value="username" name="username" type="text">
-  <input type="submit" value="sign in">
-</form>
+<% else %>
+
+  <form action="/username" method='post'>
+    <input style="color:gray" value="username" name="username" type="text">
+    <input style="color:gray" value="password" name="password" type="text">
+    <input type="submit" value="sign in">
+  </form>
+
+  <% if @invalid_status == true %>
+    <p style="color:red; font-size:12px">Sorry, that username and password do not match</p>
+  <% end %>
+
+  <br>
+  <br>
+
+  <form action="/create_account" method='post'>
+    <input style="color:gray" value="username" name="username" type="text">
+    <input style="color:gray" value="password" name="password" type="text">
+    <input type="submit" value="create account">
+  </form>
+<% end %>
+
+
