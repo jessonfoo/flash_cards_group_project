@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    <%Deck.all.each do |deck|%>
+    <a href="/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
+    <%end%>
+  </ul>
+</div>
