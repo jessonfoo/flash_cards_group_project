@@ -1,4 +1,4 @@
-get '/:user_id' do
+get '/:username' do
   erb :index
 end
 
