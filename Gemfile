@@ -15,14 +15,11 @@ gem 'rake'
 
 gem 'shotgun'
 
-group :test do
-  gem 'shoulda-matchers'
-  gem 'rack-test'
-  gem 'rspec'
-  gem 'capybara'
-end
+gem 'shoulda-matchers'
+gem 'rack-test'
+gem 'rspec'
+gem 'capybara'
 
-group :test, :development do
-  gem 'factory_girl'
-  gem 'faker'
-end
+gem 'factory_girl'
+gem 'faker'
+
