@@ -36,3 +36,31 @@ post '/signout' do
   session[:invalid] = false
   redirect '/'
 end
+
+get '/:id/newdeck' do
+  @user = User.find(params[:id])
+  erb :new_deck_layout
+end
+
+post '/:id/newdeck' do
+  @user = User.find(params[:id])
+  @deck = Deck.create(deck_name: params[:deck_name])
+  @deck_id = @deck.id
+  erb :new_deck_layout
+end
+
+get '/:id/:deck_id/newcard' do
+  @user = User.find(params[:id])
+  @deck = Deck.find(params[:deck_id])
+  @deck_id = @deck.id
+  @cards = @deck.cards
+  erb :new_deck_layout
+end
+
+post '/:id/:deck_id/newcard' do
+  @user = User.find(params[:id])
+  @deck = Deck.find(params[:deck_id])
+  @card = Card.create(term: params[:term], definition: params[:definition])
+  @deck.cards << @card
+  redirect "/#{@user.id}/#{params[:deck_id]}/newcard"
+end

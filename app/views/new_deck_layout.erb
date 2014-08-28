@@ -1,0 +1,38 @@
+<h1>Create A New Deck</h1>
+
+<form action="/" method="get">
+  <input type="submit" value="home">
+</form>
+
+<% if @deck_id %>
+    <h3>Deck name: <%=@deck.deck_name%></h3>
+
+    <form action="/<%="#{@user.id}"%>/<%="#{@deck_id}"%>/newcard" method="post">
+      <input style="color:gray" type="text" value="term" name="term">
+      <input style="color:gray" type="text" value="definition" name="definition">
+      <input type="submit" value="add card">
+    </form>
+    <br>
+
+    <% if @cards %>
+      <h3 style="margin: 10px">Current Cards:</h3>
+      <% @cards.each do |card| %>
+        <div style="background:#E3ECEC; width:60%; border-radius: 15px; padding:2%; margin: 10px">
+          <span><b>Question / term: </b></span>
+          <span style="color:blue"><%="#{card.term}"%></span><br>
+          <span><b>Answer: </b></span>
+          <span style="color:green"><%="#{card.definition}"%></span><br>
+        </div>
+      <% end %>
+    <% end %>
+
+<% else %>
+
+  <form action="/<%="#{@user.id}"%>/newdeck" method="post">
+    <input type="text" value="deck name" name="deck_name">
+    <input type="submit" value="submit deck name">
+  </form>
+
+<% end %>
+
+
