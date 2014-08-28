@@ -28,7 +28,7 @@ end
 
 get '/:id' do
   @user = User.find(params[:id])
-  erb :user_layout
+  erb :index
 end
 
 post '/signout' do
