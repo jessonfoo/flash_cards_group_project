@@ -1,6 +1,6 @@
 <header>
   <div class = "header">
-    <h1>Welcome USERNAME></h1>
+    <h1>Welcome USERNAME</h1>
       <form action="/signout" method="post">
         <input type="submit" value="sign out">
       </form>
@@ -20,11 +20,24 @@
           <a href="/USERID/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
         <%end%>
       </ul>
+      <form action="/USERID/new_deck" method="post">
+        <input type="submit" value="add a deck!">
+      </form>
+    </div>
+
+    <div class= "user_history">
+      <h2>Your deck history</h2>
+      <ul>
+
+      </ul>
+
     </div>
   </aside>
 
   <aside class = "left">
-    <img src="http://shechive.files.wordpress.com/2011/08/kitty-cat-18.jpg" alt="Profile picture">
+    <img src="http://shechive.files.wordpress.com/2011/08/kitty-cat-18.jpg" alt="Profile picture" height="200" width="300">
+    <h3>"USERNAME"</h3>
+    <p>"Joined on CREATED_AT"</p>
   </aside>
 </body>
 
