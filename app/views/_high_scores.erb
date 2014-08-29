@@ -1,0 +1,5 @@
+<h2>High Scores</h2>
+<% high_scores = Game.where(deck_id: 3).order(user_id: :desc).limit(3)
+    high_scores.each do |game|%>
+    <p><%= game.user.username %> : <%= game.score %></p>
+    <%end%>
