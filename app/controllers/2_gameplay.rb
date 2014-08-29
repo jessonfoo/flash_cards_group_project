@@ -3,18 +3,14 @@ enable :sessions
 post '/:user_id/:deck_id/:card_no' do
   @deck = Deck.find(params[:deck_id])
   @cards = @deck.cards
-
-  # if params[:card_no].to_i == @cards.length - 1
-  #   redirect "/#{@deck.user_id}"
-  # end
-
   @answer = params[:answer]
   @card_no = params[:card_no].to_i
+  redirect to ('/') if @card_no > @cards.length - 1
 
   redirect to("/#{params[:user_id]}/#{@deck.id}/#{@card_no}")
 end
 
-
+ga
 #set route from deck (from index.erb) to have card_no 0
 
 
