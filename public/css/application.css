@@ -1,3 +1,4 @@
+
 body {
   width: 90%;
   margin: 0 auto;
@@ -19,6 +20,11 @@ body {
   text-shadow: 2px 2px 4px black;
 }
 
+li{
+  display: inline;
+  padding: 0.5em;
+}
+
 aside.left {
   float: left;
 }
@@ -30,4 +36,15 @@ aside.right {
 
 .table_header {
   font-weight: bold;
+}
+
+#column {
+  overflow: auto;
+  height: 22em;
+  margin-bottom: 1em;
+  background-color: #efefef;
+  opacity: 0.5;
+  width: 31.3%;
+  float: left;
+  margin: 1%;
 }

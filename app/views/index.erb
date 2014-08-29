@@ -2,41 +2,39 @@
   <div class = "header">
     <h1>Welcome <%=@user.username%></h1>
   </div>
+
+  <div id="nav">
+    <li><form action="/signout" method="post">
+      <input type="submit" value="sign out">
+    </form></li>
+    <li> <form action="/" method="get">
+      <input type="submit" value="home">
+    </form></li>
+  </div>
+
 </header>
 
 <body>
-  <form action="/signout" method="post">
-    <input type="submit" value="sign out">
-  </form>
-  <br>
-  <form action="/" method="get">
-    <input type="submit" value="home">
-  </form>
-  <aside class="right">
-    <div class = "deck_list">
-      <h2>Available Decks</h2>
-      <ul>
-        <%Deck.all.each do |deck|%>
-          <a href="/<%=@user.id%>/<%=deck.id%>/0"><li><%=deck.deck_name%></li></a>
-        <%end%>
-      </ul>
-      <form action="/<%=@user.id%>/newdeck" method="get">
-        <input type="submit" value="add a deck!">
-      </form>
-    </div>
-
-    <div class= "user_history">
-        <%= erb :'_user_games' %>
-    </div>
-  </aside>
-
   <aside class = "left">
-    <img src="http://shechive.files.wordpress.com/2011/08/kitty-cat-18.jpg" alt="Profile picture" height="200" width="300">
+    <img src="http://shechive.files.wordpress.com/2011/08/kitty-cat-18.jpg" alt="Profile picture" height="220" width="320" margin= "1%">
     <h3><%=@user.username%></h3>
     <p>Joined on <%=@user.created_at%></p>
-  </aside>.
+  </aside>
+
+  <div id="column">
+    <h2>Available Decks</h2>
+    <ul>
+      <%Deck.all.each do |deck|%>
+      <a href="/<%=@user.id%>/<%=deck.id%>/0"><li><%=deck.deck_name%></li></a>
+      <%end%>
+    </ul>
+    <form action="/<%=@user.id%>/newdeck" method="get">
+      <input type="submit" value="add a deck!">
+    </form>
+  </div>
+
+  <div id= "column">
+    <%= erb :'_user_games' %>
+  </div>
+
 </body>
-
-<footer>
-
-</footer>
