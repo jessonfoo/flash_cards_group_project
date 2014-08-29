@@ -1,0 +1,16 @@
+<h1 class="header"> SUP BRO </h1>
+<h1> You scored <%="#{@game.score}"%> out of <%="#{@deck.cards.count}"%> in the <%="#{@deck.deck_name}"%> deck!</h1>
+<h3> (<%="#{@game.score / @deck.cards.count * 100}"%>%) </h3>
+
+
+<form action="/<%="#{@user.id}"%>/<%="#{@deck.id}"%>/0" method="get">
+  <input type="submit" value="play again">
+</form>
+<br>
+<form action="/" method="get">
+  <input type="submit" value="home">
+</form>
+ <br>
+<form action="/<%=@user.id%>" method="get">
+  <input type="submit" value="go to profile">
+</form>

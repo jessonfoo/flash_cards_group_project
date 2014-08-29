@@ -12,6 +12,7 @@
   <form action="/<%="#{params[:user_id]}"%>/<%=@deck.id%>/<%=@card_no%>" method="post">
   <input type="submit" value="next">
 </form>
+<br>
 
 <% else %>
 
@@ -22,3 +23,12 @@
 
 <% end %>
 
+<br>
+
+<form action="/<%=@user%>" method="get">
+    <input type="submit" value="go to profile">
+</form>
+
+<!-- <form action="/<%="#{params[:user_id]}"%>/<%=@deck.id%>/<%=@card_no + 1%>" method="get">
+    <input type="submit" value="next">
+</form> -->
