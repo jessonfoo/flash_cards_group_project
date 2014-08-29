@@ -1,17 +1,17 @@
 <header>
   <div class = "header">
     <h1>Welcome <%=@user.username%></h1>
-      <form action="/signout" method="post">
-        <input type="submit" value="sign out">
-      </form>
-
-      <form action="/" method="get">
-        <input type="submit" value="home">
-      </form>
   </div>
 </header>
 
 <body>
+  <form action="/signout" method="post">
+    <input type="submit" value="sign out">
+  </form>
+  <br>
+  <form action="/" method="get">
+    <input type="submit" value="home">
+  </form>
   <aside class="right">
     <div class = "deck_list">
       <h2>Available Decks</h2>
@@ -20,7 +20,7 @@
           <a href="/<%=@user.id%>/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
         <%end%>
       </ul>
-      <form action="/<%=@user.id%>/newdeck" method="post">
+      <form action="/<%=@user.id%>/newdeck" method="get">
         <input type="submit" value="add a deck!">
       </form>
     </div>
