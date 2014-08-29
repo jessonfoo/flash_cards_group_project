@@ -4,12 +4,16 @@
   <input type="submit" value="home">
 </form>
 
+<form action="/<%=@user.id%>" method="get">
+    <input type="submit" value="Save Deck">
+</form>
+
 <% if @deck_id %>
     <h3>Deck name: <%=@deck.deck_name%></h3>
 
     <form action="/<%="#{@user.id}"%>/<%="#{@deck_id}"%>/newcard" method="post">
-      <input style="color:gray" type="text" value="term" name="term">
-      <input style="color:gray" type="text" value="definition" name="definition">
+      <input style="color:gray" type="text" value="definition (question)" name="definition">
+      <input style="color:gray" type="text" value="term (answer)" name="term">
       <input type="submit" value="add card">
     </form>
     <br>
@@ -18,10 +22,10 @@
       <h3 style="margin: 10px">Current Cards:</h3>
       <% @cards.each do |card| %>
         <div class="card">
-          <span><b>Question / term: </b></span>
-          <span style="color:blue"><%="#{card.term}"%></span><br>
+          <span><b>Question / definition: </b></span>
+          <span style="color:blue"><%="#{card.definition}"%></span><br>
           <span><b>Answer: </b></span>
-          <span style="color:green"><%="#{card.definition}"%></span><br>
+          <span style="color:green"><%="#{card.term}"%></span><br>
         </div>
       <% end %>
     <% end %>
