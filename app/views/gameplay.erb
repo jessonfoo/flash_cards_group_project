@@ -4,6 +4,7 @@
 
 <div id ="userInput">
 
+<h2>Score: <%="#{@score}"%></h2>
 
 <form action="/<%="#{params[:user_id]}"%>/<%=@deck.id%>/<%=@card_no%>" method="post">
   <input type="text" name="answer">

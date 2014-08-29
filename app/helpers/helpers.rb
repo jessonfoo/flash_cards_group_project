@@ -10,4 +10,9 @@ helpers do
   def invalid?
     session[:invalid]
   end
+
+  def increment_score
+    session[:score] += 1
+  end
+
 end

@@ -7,11 +7,8 @@ class Deck < ActiveRecord::Base
     self.cards.at(index)
   end
 
-   def self.compare_answer(answer, card)
-    if answer == card.term
-      true
-    else
-      false
-    end
+   def self.compare_answer(answer, card_id)
+    card = Card.find(card_id)
+    return true if answer.to_s == card.term.to_s
   end
 end
