@@ -27,3 +27,7 @@ aside.right {
   text-align: left;
   float: right;
 }
+
+.table_header {
+  font-weight: bold;
+}

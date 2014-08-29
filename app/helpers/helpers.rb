@@ -15,4 +15,8 @@ helpers do
     session[:score] += 1
   end
 
+  def logged_in_user
+    User.find(session[:user_id])
+  end
+
 end
