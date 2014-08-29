@@ -6,7 +6,7 @@
       <td>Deck</td>
       <td>Score</td>
     </tr>
-      <% past_games = Game.where(user_id: session[:user_id])
+      <% past_games = Game.where(user_id: session[:user_id]).order(updated_at: :desc).limit(20)
       past_games.each do |game|%>
       <tr>
         <td><%= game.deck.deck_name %></td>
