@@ -44,7 +44,7 @@ end
 
 post '/:id/newdeck' do
   @user = User.find(params[:id])
-  @deck = Deck.create(deck_name: params[:deck_name])
+  @deck = Deck.create(deck_name: params[:deck_name], creator_id: @user.id)
   @deck_id = @deck.id
   erb :new_deck_layout
 end
