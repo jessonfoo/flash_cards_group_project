@@ -1,6 +1,6 @@
 <header>
   <div class = "header">
-    <h1>Welcome USERNAME</h1>
+    <h1>Welcome <%=@user.username%></h1>
       <form action="/signout" method="post">
         <input type="submit" value="sign out">
       </form>
@@ -17,10 +17,10 @@
       <h2>Available Decks</h2>
       <ul>
         <%Deck.all.each do |deck|%>
-          <a href="/USERID/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
+          <a href="/<%=@user.id%>/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
         <%end%>
       </ul>
-      <form action="/USERID/new_deck" method="post">
+      <form action="/<%=@user.id%>/newdeck" method="post">
         <input type="submit" value="add a deck!">
       </form>
     </div>
@@ -36,9 +36,9 @@
 
   <aside class = "left">
     <img src="http://shechive.files.wordpress.com/2011/08/kitty-cat-18.jpg" alt="Profile picture" height="200" width="300">
-    <h3>"USERNAME"</h3>
-    <p>"Joined on CREATED_AT"</p>
-  </aside>
+    <h3><%=@user.username%></h3>
+    <p>Joined on <%=@user.created_at%></p>
+  </aside>.
 </body>
 
 <footer>
