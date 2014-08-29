@@ -1,12 +1,21 @@
 class Deck < ActiveRecord::Base
   has_many :cards
 
-  def current_card
-    current_card = self.cards.last
+
+
+  def get_card(index)
+    self.cards.at(index)
   end
 
-  def next_card
-    self.cards.pop 
+      
+  def self.compare_answer(answer, card)
+    if answer == card.term 
+      true
+    else
+      false
+    end
   end
+
+
 
 end
