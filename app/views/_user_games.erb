@@ -1,0 +1,17 @@
+<h2>Past Decks Played</h2>
+
+<table style="width:90%">
+  <tbody>
+    <tr class="table_header">
+      <td>Deck</td>
+      <td>Score</td>
+    </tr>
+      <% past_games = Game.where(user_id: session[:user_id])
+      past_games.each do |game|%>
+      <tr>
+        <td><%= game.deck.deck_name %></td>
+        <td><%= game.score %></td>
+      </tr>
+      <%end%>
+  </tbody>
+</table>
