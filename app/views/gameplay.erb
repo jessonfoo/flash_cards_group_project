@@ -1,0 +1,11 @@
+<div id="card_display">
+  <%= erb :'_card_display', :layout => false, :locals => {current_card: @current_card, correct: @correct}%>
+</div>
+
+<div id ="userInput">
+
+
+<form action="/<%="#{params[:user_id]}"%>/<%=@deck.id%>/<%=@card_no%>" method="post">
+  <input type="text" name="answer">
+  <input type="submit" value="submit">
+</form>

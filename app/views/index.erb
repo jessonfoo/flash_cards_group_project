@@ -17,7 +17,7 @@
       <h2>Available Decks</h2>
       <ul>
         <%Deck.all.each do |deck|%>
-          <a href="/<%=@user.id%>/<%=deck.deck_name%>"><li><%=deck.deck_name%></li></a>
+          <a href="/<%=@user.id%>/<%=deck.id%>/0"><li><%=deck.deck_name%></li></a>
         <%end%>
       </ul>
       <form action="/<%=@user.id%>/newdeck" method="get">
