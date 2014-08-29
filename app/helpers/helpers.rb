@@ -10,4 +10,5 @@ helpers do
   def invalid?
     session[:invalid]
   end
+
 end

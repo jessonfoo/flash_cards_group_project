@@ -9,3 +9,16 @@
   <input type="text" name="answer">
   <input type="submit" value="submit">
 </form>
+
+<div id="high_score">
+  <%= erb :'_high_scores' %>
+</div>
+
+
+<form action="/" method="get">
+  <input type="submit" value="home">
+</form>
+
+  <form action="/signout" method="post">
+    <input type="submit" value="sign out">
+  </form>
