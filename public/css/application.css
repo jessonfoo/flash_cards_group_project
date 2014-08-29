@@ -5,6 +5,14 @@ body {
   background-image: url("../images/background green.jpg");
 }
 
+.card {
+  background:#E3ECEC;
+  width:40%;
+  border-radius: 15px;
+  padding:2%;
+  margin: 1% auto;
+}
+
 .header {
   text-align: center;
 }

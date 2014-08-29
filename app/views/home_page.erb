@@ -5,6 +5,10 @@
     <input type="submit" value="sign out">
   </form>
 
+  <form action="/<%=@user.id%>" method="get">
+    <input type="submit" value="go to profile">
+  </form>
+
 <% else %>
 
   <form action="/username" method='post'>

@@ -17,7 +17,7 @@
     <% if @cards %>
       <h3 style="margin: 10px">Current Cards:</h3>
       <% @cards.each do |card| %>
-        <div style="background:#E3ECEC; width:60%; border-radius: 15px; padding:2%; margin: 10px">
+        <div class="card">
           <span><b>Question / term: </b></span>
           <span style="color:blue"><%="#{card.term}"%></span><br>
           <span><b>Answer: </b></span>
